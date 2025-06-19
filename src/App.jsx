@@ -1,11 +1,23 @@
-import { useState } from "react";
+import { useReducer,  } from "react";
 
 function App() {
-  const [count, setCount] = useState(0)
-  const [showText, setShowText] = useState(true)
+  const reducer = (state, action) => {
+    return
+
+
+  }
+
+
+  const [state, dispatach] = useReducer(reducer, {
+    cont: 0,
+    showText: true
+  });
+
+  // const [count, setCount] = useState(0)
+  // const [showText, setShowText] = useState(true)
 
   const handleClick = () => {
-    setCount(prevCount => prevCount + 1);
+    setCount((prevCount) => prevCount + 1);
     setShowText(!showText);
   }
 
