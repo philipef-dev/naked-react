@@ -1,5 +1,5 @@
 function App() {
-  return <>naked react</>;
+  return <>naked react - PhilipeF-DEV</>;
 }
 
 export default App;
