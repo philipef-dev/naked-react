@@ -4,15 +4,15 @@ function App() {
   const [count, setCount] = useState(0)
   const [showText, setShowText] = useState(true)
 
-  const increment = () => {
-    setCount(count + 1);
+  const handleClick = () => {
+    setCount(prevCount => prevCount + 1);
     setShowText(!showText);
   }
 
   return (
     <>
-      {count}
-      <button onClick={increment}>Clique aqui</button>
+      <p>{count}</p>
+      <button onClick={handleClick}>Clique aqui</button>
       {showText && <p>Mostra texto</p>}
     </>
   )
