@@ -1,24 +1,29 @@
-import { useReducer,  } from "react";
+import { useReducer, } from "react";
+
+const reducer = (state, action) => {
+  switch (action.type) {
+    case 'Increment':
+      return { ...state, count: state.count + 1 }
+    case 'ShowText':
+      return { ...state, showText: !state.showText }
+    default:
+      return "This action doesns't exist"
+  }
+}
+
 
 function App() {
-  const reducer = (state, action) => {
-    return
-
-
-  }
-
-
   const [state, dispatach] = useReducer(reducer, {
-    cont: 0,
+    count: 0,
     showText: true
   });
 
-  // const [count, setCount] = useState(0)
-  // const [showText, setShowText] = useState(true)
+  // Poderia fazer assim tambem... usar destruction 
+  const { count, showText } = state
 
   const handleClick = () => {
-    setCount((prevCount) => prevCount + 1);
-    setShowText(!showText);
+    dispatach({ type: 'Increment' });
+    dispatach({ type: 'ShowText' });
   }
 
   return (
